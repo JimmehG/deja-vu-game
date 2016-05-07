@@ -17,6 +17,11 @@ public static class GameController {
         LabKeycard, DoorLabEntry, Chair, LabBoxUnlocked, LabPipeBroken
     }
 
+    public static void PickupItem(Item itemID)
+    {
+        inventory = itemID;
+    }
+
     public static void SetFlag(Flag flagID)
     {
         Flags.Add(flagID, true);
