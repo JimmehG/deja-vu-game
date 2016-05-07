@@ -14,7 +14,7 @@ public static class GameController {
 
     public enum Flag
     {
-        LabKeycard, DoorLabEntry, Chair, LabBoxUnlocked, LabPipeBroken
+        LabKeycard, DoorLabEntry, Chair, ChairMoved, LabBoxUnlocked, LabPipeBroken, LabKeyCardExit
     }
 
     public static void PickupItem(Item itemID)

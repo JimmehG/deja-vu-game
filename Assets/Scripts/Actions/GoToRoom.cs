@@ -12,7 +12,14 @@ public class GoToRoom : Action {
     public void goRoom()
     {
         Instantiate(room);
-        Destroy(transform.parent.gameObject);
+        if (transform.parent != null)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }

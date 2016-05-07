@@ -11,11 +11,20 @@ public class CheckInventory : Action {
         if (GameController.CheckInventory(itemID)){
             GameController.SetFlag(flagID);
             GameController.RemoveItem();
+            Destroy(this.gameObject);
         }
         else
         {
             //play bad noise
         }
 
+    }
+
+    void Start()
+    {
+        if (GameController.CheckFlag(flagID))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

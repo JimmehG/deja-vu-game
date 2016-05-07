@@ -2,7 +2,12 @@
 using System.Collections;
 
 public class Interactable : MonoBehaviour {
-    public Action action;
+    private Action action;
+
+    void Start()
+    {
+        action = GetComponentInParent<Action>();
+    }
 
 	void OnMouseDown()
     {
