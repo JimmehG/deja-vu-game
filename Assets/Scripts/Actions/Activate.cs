@@ -6,7 +6,7 @@ public class Activate : Action {
     public GameController.Flag flagID;
     public override void Perform()
     {
-        StopAnimation stopAnimation = GetComponent<StopAnimation>();
+        StopAnimation stopAnimation = transform.parent.GetComponent<StopAnimation>();
         if (stopAnimation.clickable)
         {
             stopAnimation.Start();

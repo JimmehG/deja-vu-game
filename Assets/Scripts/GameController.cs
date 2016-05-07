@@ -45,4 +45,29 @@ public static class GameController {
         }
         return false;
     }
+
+    private static float armDistance = 0.85f;
+
+    private static float oneArmX = -2.7f;
+    private static float oneArmY = 3f;
+
+    private static int armX = 3;
+    private static int armY = 7;
+
+    public static void UpdateArmPos(int x, int y)
+    {
+        armX = x;
+        armY = y;
+    }
+
+    public static float GetArmXPos()
+    {
+        return oneArmX + (armX * armDistance);
+    }
+
+    public static float GetArmYPos()
+    {
+        return oneArmY + (armY * armDistance);
+    }
+
 }

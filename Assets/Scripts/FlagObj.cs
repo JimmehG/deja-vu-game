@@ -5,7 +5,7 @@ public class FlagObj : MonoBehaviour {
     public GameController.Flag flagID;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         if (GameController.CheckFlag(flagID))
         {
             Destroy(this.gameObject);
