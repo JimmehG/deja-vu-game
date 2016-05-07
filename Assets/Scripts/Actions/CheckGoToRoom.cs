@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class CheckGoToRoom : GoToRoom {
-    public int DoorID;
+    public GameController.Flag flagID;
+    //public noisemaker
 
     public override void Perform()
     {
-        if (GameController.open(DoorID))
+        if (GameController.CheckFlag(flagID))
             base.Perform();
         else
         {
