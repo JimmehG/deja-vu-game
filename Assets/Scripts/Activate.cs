@@ -2,10 +2,10 @@
 using System.Collections;
 using System;
 
-public class Activate : Action {
+public class Activate : MonoBehaviour {
     public GameController.Flag flagID;
 
-    public override void Perform()
+    public void Trigger()
     {
         GameController.SetFlag(flagID);
     }

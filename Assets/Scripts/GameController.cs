@@ -39,7 +39,6 @@ public static class GameController {
 
     public static bool CheckFlag(Flag flagID)
     {
-        Debug.Log(flagID + " " + Flags.ContainsKey(flagID));
         if (Flags.ContainsKey(flagID))
         {
             return Flags[flagID];
