@@ -6,6 +6,13 @@ using System;
 public static class GameController {
     private static Item inventory = Item.None;
     private static Dictionary<Flag, bool> Flags = new Dictionary<Flag, bool>();
+    private static GameObject[] cursorItems =
+    {
+        Resources.Load("LabEntry") as GameObject,
+        Resources.Load("LabKey") as GameObject,
+        Resources.Load("LabExit") as GameObject
+    };
+
 
     public enum Item
     {
@@ -22,6 +29,20 @@ public static class GameController {
     public static void PickupItem(Item itemID)
     {
         inventory = itemID;
+        switch (itemID)
+        {
+            case Item.LabEntry:
+                GameObject.Instantiate(cursorItems[0]);
+                break;
+            case Item.LabKey:
+                GameObject.Instantiate(cursorItems[1]);
+                break;
+            case Item.LabExit:
+                GameObject.Instantiate(cursorItems[2]);
+                break;
+            default:
+                break;
+        }
     }
 
     public static void SetFlag(Flag flagID)
@@ -32,6 +53,7 @@ public static class GameController {
     public static void RemoveItem()
     {
         inventory = Item.None;
+        GameObject.Destroy(GameObject.FindGameObjectWithTag("CursorItem"));
     }
 
     public static bool CheckInventory(Item itemID)
