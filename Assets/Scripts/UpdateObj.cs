@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FlagObj : MonoBehaviour {
+public class UpdateObj : MonoBehaviour {
     public GameController.Flag flagID;
 
-	// Use this for initialization
-	void Start () {
+	public void activateCollider()
+    {
         if (GameController.CheckFlag(flagID))
         {
-            Destroy(this.gameObject);
+            GetComponentInChildren<BoxCollider2D>().enabled = true;
         }
     }
-	
 }
